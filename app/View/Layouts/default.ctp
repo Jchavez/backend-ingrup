@@ -39,7 +39,50 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	 <?php echo $this->Session->flash('auth'); ?>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+			 <?php if ($this->Session->read('Auth.User')): ?>
+			<ul>
+				<li>
+					<a href="/backend-ingrup/roles">Roles</a>
+					<ul>
+						<li>
+							<a href="/backend-ingrup/users">Usuarios</a>
+							<ul>
+								<li>
+									<a href="/backend-ingrup/users/logout">Cerrar Sesión</a>
+								</li>
+							</ul>
+						</li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="/backend-ingrup/family_products">Productos por Familia</a>
+					<ul>
+						<li>
+							<a href="/backend-ingrup/category_products">Productos por Categoria</a>
+							<ul>
+								<li>
+									<a href="/backend-ingrup/products">Productos</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/backend-ingrup/family_products">Familia Industria</a>
+					<ul>
+						<li>
+							<a href="/backend-ingrup/category_products">Categoria Industrias</a>
+							<ul>
+								<li>
+									<a href="/backend-ingrup/products">Productos</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<?php  endif; ?>
 		</div>
 		<div id="content">
 
@@ -48,14 +91,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
 			<p>
-				<?php echo $cakeVersion; ?>
+				Copyright © 2015 INGRUP - All Rights Reserved
 			</p>
 		</div>
 	</div>

@@ -23,8 +23,8 @@
 
 
 		echo $this->Form->input('datasheet_features');
-		echo $this->Form->input('datasheet_weight', array('type' =>  'file'));
-		echo $this->Form->input('datasheet_dimensions', array('type' =>  'file'));
+		echo $this->Form->input('datasheet_weight');
+		echo $this->Form->input('datasheet_dimensions');
 
 		echo "<br /><br />";
 		echo $this->Form->label('','Datasheet Packaging');
